@@ -47,4 +47,4 @@ const bookmarkGame = function(game)
     setCount(c);
 
     return;
-}
+} // end bookmarkGame
