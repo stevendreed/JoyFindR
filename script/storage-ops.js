@@ -6,11 +6,11 @@
 
 */
 
-// retrieveGameCount = retrieve the current number of stored games
-// stores
-const retrieveGameCount = function()
+// setCount = set the current number of stored games to value
+// stores the input under the count key 
+const setCount = function(value)
 {
-    
+    localStorage.setItem(`count`, `${value}`);
 }
 
 // bookmarkGame => save to local storage
