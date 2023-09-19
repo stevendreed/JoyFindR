@@ -40,5 +40,8 @@ const bookmarkGame = function(game)
     // create a key for the stored item
     let tempKey = `game${c}`;
 
-    
+    // save with key
+    localStorage.setItem(tempKey, game);
+
+    // update game count
 }
