@@ -10,20 +10,28 @@
 // stores the input under the count key 
 const setCount = function(value)
 {
+    value = toString(value);
     localStorage.setItem(`count`, `${value}`);
 }
 
 // retrieveCount = retrieve the current count of stored games
 // retrieves the value under the count key, and returns as a parsed
 // float value
-const retrieveCount = function(value)
+const retrieveCount = function()
 {
     return parseFloat(localStorage.getItem(`count`));
 }
 
 // bookmarkGame => save to local storage
-// function accepts a hash and stores that into local storage
+// first, retrieves the current game count, then uses that number to
+// set a key for a new stored item
+// finally, increments the stored count by 1 and stores that new value
 const bookmarkGame = function(game)
 {
-    
+    // exception handling if count has not been defined yet
+    if (!Window.localStorage[`count`])
+    {
+        setCount(0);
+    }
+
 }
