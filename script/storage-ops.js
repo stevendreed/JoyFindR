@@ -44,4 +44,7 @@ const bookmarkGame = function(game)
     localStorage.setItem(tempKey, game);
 
     // update game count
+    setCount(c);
+
+    return;
 }
