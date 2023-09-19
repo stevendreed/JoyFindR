@@ -35,8 +35,10 @@ const bookmarkGame = function(game)
     } // end if
 
     // retrieve current game count
-    let c = retrieveCount;
+    let c = retrieveCount + 1;
 
     // create a key for the stored item
+    let tempKey = `game${c}`;
 
+    
 }
