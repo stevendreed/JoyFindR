@@ -32,6 +32,11 @@ const bookmarkGame = function(game)
     if (!Window.localStorage[`count`])
     {
         setCount(0);
-    }
+    } // end if
+
+    // retrieve current game count
+    let c = retrieveCount;
+
+    // create a key for the stored item
 
 }
