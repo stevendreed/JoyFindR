@@ -6,11 +6,16 @@
 
 */
 
-// saveToLS => save to local storage
-// function accepts a value to save and checks if it is a json
-// if it is a json, function stringifies the object first
-// otherwise, function stores the string
-const saveToLS = function(toSave, saveLocation)
+// retrieveGameCount = retrieve the current number of stored games
+// stores
+const retrieveGameCount = function()
 {
+    
+}
 
+// bookmarkGame => save to local storage
+// function accepts a hash and stores that into local storage
+const bookmarkGame = function(game)
+{
+    
 }
