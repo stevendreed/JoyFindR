@@ -53,9 +53,9 @@ const rawgFetch = function(queryParam, url)
 
 const testBtnEl = document.getElementById(`testing-form`);
 
-testBtnEl.addEventListener(`submit`, function()
+testBtnEl.addEventListener(`submit`, function(event)
 {
-
+    event.preventDefault(); // stop page from automatically refreshing
 } // end function
 );
 
