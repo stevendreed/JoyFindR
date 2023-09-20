@@ -24,10 +24,15 @@ const RAWG_URL = `https://api.rawg.io/key=${RAWG_KEY}`; // generic key-authed UR
 */
 const concatQuerPar = function(arrayOfParams)
 {
+    let finalQuery = `?`;
     // craft a query of concatenated query parameters
     for (let i = 0; i < arrayOfParams.length; i++)
     {
-
+        if (i > 0)
+        {
+            finalQuery += `&`; // add an ampersand if/f more items to loop
+                               // thru AND query isn't a singleton
+        }
     }
 }
 
