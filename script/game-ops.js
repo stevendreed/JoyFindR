@@ -63,10 +63,11 @@ testBtnEl.addEventListener(`submit`, function(event)
     event.preventDefault(); // stop page from automatically refreshing
     
     // get data entered in input element
-    let inputData = ``;
+    let inputData = document.getElementById(`input-field`).formdata
 
+    console.log(inputData);
     // pass data as fetch query
-    rawgFetch(concatQuerPar(inputData), RAWG_URL);
+    // rawgFetch(concatQuerPar(inputData), RAWG_URL);
 } // end function
 );
 
