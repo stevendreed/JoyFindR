@@ -36,6 +36,7 @@ const concatQuerPar = function(arrayOfParams)
         }
         finalQuery += arrayOfParams[i]; // add the ith param to our query
     }
+    console.log(finalQuery); // test output for finalQuery
 }
 
 /*
