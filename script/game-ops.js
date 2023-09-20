@@ -22,6 +22,7 @@ const RAWG_URL = `https://api.rawg.io/key=${RAWG_KEY}`; // generic key-authed UR
    function combines strings together into a way that is understandable by
    a server API. Intended use is alongside a fetch function
 */
+
 const concatQuerPar = function(arrayOfParams)
 {
     let finalQuery = `?`;
@@ -33,6 +34,7 @@ const concatQuerPar = function(arrayOfParams)
             finalQuery += `&`; // add an ampersand if/f more items to loop
                                // thru AND query isn't a singleton
         }
+        finalQuery += arrayOfParams[i]; // add the ith param to our query
     }
 }
 
