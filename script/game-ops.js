@@ -17,6 +17,15 @@ const RAWG_KEY = `aaadbe900b0f429ea88c22d1c7f9badf`;    // key for SDR
 const RAWG_URL = `https://api.rawg.io/key=${RAWG_KEY}`; // generic key-authed URL
 
 
+const rawgFetch = function(arrayOfParams, url)
+{
+    // craft a query of concatenated query parameters
+    for (let i = 0; i < arrayOfParams.length; i++)
+    {
+
+    }
+} // end rawgFetch
+
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // TESTING
 // comb document for element to append a button to, for testing
