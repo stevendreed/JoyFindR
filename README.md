@@ -14,7 +14,7 @@ Right click on file, and click 'Open in Default Browser' to view project in brow
 
 
 ## Usage
-
+duck
 Usage will consist of searching for memes using an input field, where the results will gradually be displayed on screen as the user hits submit. Upon clicking submit, the request will be sent to the API, where it will send back a response to the client in HTML form.
 
 # Support
