@@ -16,16 +16,21 @@
 const RAWG_KEY = `aaadbe900b0f429ea88c22d1c7f9badf`;    // key for SDR
 const RAWG_URL = `https://api.rawg.io/key=${RAWG_KEY}`; // generic key-authed URL
 
-/*
-   rawgFetch function = fetch a json response based on search param
-*/
-const rawgFetch = function(arrayOfParams, url)
+const concatQuerPar = function(arrayOfParams)
 {
     // craft a query of concatenated query parameters
     for (let i = 0; i < arrayOfParams.length; i++)
     {
 
     }
+}
+
+/*
+   rawgFetch function = fetch a json response based on search param
+*/
+const rawgFetch = function(queryParam, url)
+{
+    
 } // end rawgFetch
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
