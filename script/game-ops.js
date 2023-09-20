@@ -16,6 +16,12 @@
 const RAWG_KEY = `aaadbe900b0f429ea88c22d1c7f9badf`;    // key for SDR
 const RAWG_URL = `https://api.rawg.io/key=${RAWG_KEY}`; // generic key-authed URL
 
+/*
+   concatQuerPar function = concatenate a query parameter from a series of
+   search terms
+   function combines strings together into a way that is understandable by
+   a server API. Intended use is alongside a fetch function
+*/
 const concatQuerPar = function(arrayOfParams)
 {
     // craft a query of concatenated query parameters
