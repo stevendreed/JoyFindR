@@ -53,6 +53,12 @@ const rawgFetch = function(queryParam, url)
 
 const testBtnEl = document.getElementById(`testing-btn`);
 
+testBtnEl.addEventListener(`click`, function()
+{
+
+} // end function
+);
+
 // find body element
 const bodyEl = document.getElementsByTagName(`body`); // find body element
 
