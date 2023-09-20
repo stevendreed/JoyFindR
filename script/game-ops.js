@@ -47,8 +47,8 @@ const rawgFetch = function(queryParam, url)
     fetch(url+queryParam)
     .then(function(response)
     {
-        console.log(JSON.parse(response));
-    })
+        console.log(response.json());
+    });
 } // end rawgFetch
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
