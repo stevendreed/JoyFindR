@@ -44,7 +44,11 @@ const concatQuerPar = function(arrayOfParams)
 */
 const rawgFetch = function(queryParam, url)
 {
-    
+    fetch(url+queryParam)
+    .then(function(response)
+    {
+        console.log(JSON.parse(response));
+    })
 } // end rawgFetch
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -56,6 +60,7 @@ const testBtnEl = document.getElementById(`testing-form`);
 testBtnEl.addEventListener(`submit`, function(event)
 {
     event.preventDefault(); // stop page from automatically refreshing
+    
 } // end function
 );
 
