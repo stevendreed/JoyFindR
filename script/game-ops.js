@@ -51,9 +51,9 @@ const rawgFetch = function(queryParam, url)
 // TESTING
 // comb document for element to append a button to, for testing
 
-const testBtnEl = document.getElementById(`testing-btn`);
+const testBtnEl = document.getElementById(`testing-form`);
 
-testBtnEl.addEventListener(`click`, function()
+testBtnEl.addEventListener(`submit`, function()
 {
 
 } // end function
