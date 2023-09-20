@@ -51,6 +51,8 @@ const rawgFetch = function(queryParam, url)
 // TESTING
 // comb document for element to append a button to, for testing
 
+const testBtnEl = document.getElementById(`testing-btn`);
+
 // find body element
 const bodyEl = document.getElementsByTagName(`body`); // find body element
 
