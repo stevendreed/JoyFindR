@@ -13,8 +13,8 @@
 */
 
 // API CONSTANTS
-const RAWG_KEY = `aaadbe900b0f429ea88c22d1c7f9badf`;    // key for SDR
-const RAWG_URL = `https://api.rawg.io/key=${RAWG_KEY}`; // generic key-authed URL
+const RAWG_KEY = `key=aaadbe900b0f429ea88c22d1c7f9badf`;    // key for SDR
+const RAWG_URL = `https://api.rawg.io/`;
 
 /*
    concatQuerPar function = concatenate a query parameter from a series of
@@ -23,6 +23,7 @@ const RAWG_URL = `https://api.rawg.io/key=${RAWG_KEY}`; // generic key-authed UR
    a server API. Intended use is alongside a fetch function
 */
 
+// ['game=fallout','tag=shooter']
 const concatQuerPar = function(arrayOfParams)
 {
     let finalQuery = `?`;
@@ -44,10 +45,12 @@ const concatQuerPar = function(arrayOfParams)
 */
 const rawgFetch = function(queryParam, url)
 {
+    console.log(url+queryParam);
+
     fetch(url+queryParam)
     .then(function(response)
     {
-        console.log(response.json());
+        return response.json();
     });
 } // end rawgFetch
 
@@ -63,11 +66,13 @@ testBtnEl.addEventListener(`submit`, function(event)
     event.preventDefault(); // stop page from automatically refreshing
     
     // get data entered in input element
-    let inputData = document.getElementById(`input-field`).formdata
+    // let inputData = document.getElementById(`input-field`).formdata
+    let inputData = document.getElementById(`data`).value;
 
-    console.log(inputData);
+    // console.log(inputData);
     // pass data as fetch query
     // rawgFetch(concatQuerPar(inputData), RAWG_URL);
+    console.log(rawgFetch(inputData, RAWG_URL));
 } // end function
 );
 
