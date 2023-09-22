@@ -13,8 +13,8 @@
 */
 
 // API CONSTANTS
-const RAWG_KEY = `key=aaadbe900b0f429ea88c22d1c7f9badf`;    // key for SDR
-const RAWG_URL = `https://api.rawg.io/`;
+const RAWG_KEY = `?token&key=aaadbe900b0f429ea88c22d1c7f9badf`;    // key for SDR
+const RAWG_URL = `https://rawg.io/api/`;
 
 /*
    concatQuerPar function = concatenate a query parameter from a series of
@@ -43,11 +43,11 @@ const concatQuerPar = function(arrayOfParams)
 /*
    rawgFetch function = fetch a json response based on search param
 */
-const rawgFetch = function(queryParam, url)
+const rawgFetch = function(queryParam, url, key)
 {
-    console.log(url+queryParam);
+    console.log(url+queryParam+key);
 
-    fetch(url+queryParam)
+    fetch(url+queryParam+key)
     .then(function(response)
     {
         return response.json();
@@ -72,7 +72,7 @@ testBtnEl.addEventListener(`submit`, function(event)
     // console.log(inputData);
     // pass data as fetch query
     // rawgFetch(concatQuerPar(inputData), RAWG_URL);
-    console.log(rawgFetch(inputData, RAWG_URL));
+    console.log(rawgFetch(inputData, RAWG_URL, RAWG_KEY));
 } // end function
 );
 
