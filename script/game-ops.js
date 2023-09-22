@@ -4,12 +4,11 @@
 
    this file contains fetch functions which call on the RAWG API
 
-   [+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]
+   [++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]
    link to the api:
    https://rawg.io/apidocs
-   [+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]
+   [++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]
    
-
 */
 
 // API CONSTANTS
@@ -22,8 +21,6 @@ const RAWG_URL = `https://rawg.io/api/`;
    function combines strings together into a way that is understandable by
    a server API. Intended use is alongside a fetch function
 */
-
-// ['game=fallout','tag=shooter']
 const concatQuerPar = function(arrayOfParams)
 {
     let finalQuery = `?`;
@@ -42,6 +39,8 @@ const concatQuerPar = function(arrayOfParams)
 
 /*
    rawgFetch function = fetch a json response based on search param
+   accepts a query parameter, the url to push the parameter to, and the key
+   returns the json response from the server
 */
 const rawgFetch = function(queryParam, url, key)
 {
