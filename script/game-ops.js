@@ -45,6 +45,7 @@ const concatQuerPar = function(arrayOfParams)
 */
 const rawgFetch = function(queryParam, url, key)
 {
+    // log fetch for testing purposes
     console.log(url+queryParam+key);
 
     fetch(url+queryParam+key)
@@ -53,6 +54,19 @@ const rawgFetch = function(queryParam, url, key)
         return response.json();
     }); // end then
 } // end rawgFetch
+
+/*
+   getGameByName function = fetch request to the RAWG API which passes argument
+   as a query parameter to the server.
+   accepts a game name argument - function error handles for empty, erroneous spaces,
+   and unacceptable special characters (out of ASCII range, endl, tabs, etc)
+   returns a JSON of the request from the RAWG server
+*/
+const getGameByName = function(gameToFind)
+{
+    console.log(`getByName envoked`);
+    return
+} // end getGameByName
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // TESTING
