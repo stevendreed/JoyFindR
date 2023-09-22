@@ -64,8 +64,12 @@ const rawgFetch = function(queryParam, url, key)
 */
 const getGameByName = function(gameToFind)
 {
+    // TESTING COMMENT
     console.log(`getByName envoked`);
-    return
+    
+    // create a query parameter based on input game
+    let qp = `games?search=${gameToFind}`;
+    return rawgFetch(qp, RAWG_URL, RAWG_KEY);
 } // end getGameByName
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
