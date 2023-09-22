@@ -15,7 +15,6 @@
 // API CONSTANTS
 const RAWG_KEY = `?token&key=aaadbe900b0f429ea88c22d1c7f9badf`;    // key for SDR
 const RAWG_URL = `https://rawg.io/api/`;
-// comment here
 
 /*
    concatQuerPar function = concatenate a query parameter from a series of
