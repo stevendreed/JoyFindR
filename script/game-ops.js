@@ -34,11 +34,11 @@ const concatQuerPar = function(arrayOfParams)
         {
             finalQuery += `&`; // add an ampersand if/f more items to loop
                                // thru AND query isn't a singleton
-        }
+        } // end if
         finalQuery += arrayOfParams[i]; // add the ith param to our query
-    }
+    } // end for
     console.log(finalQuery); // test output for finalQuery
-}
+} // end concatQuerPar
 
 /*
    rawgFetch function = fetch a json response based on search param
@@ -51,7 +51,7 @@ const rawgFetch = function(queryParam, url, key)
     .then(function(response)
     {
         return response.json();
-    });
+    }); // end then
 } // end rawgFetch
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -74,7 +74,7 @@ testBtnEl.addEventListener(`submit`, function(event)
     // rawgFetch(concatQuerPar(inputData), RAWG_URL);
     console.log(rawgFetch(inputData, RAWG_URL, RAWG_KEY));
 } // end function
-);
+); // end testBtnEl
 
 // find body element
 const bodyEl = document.getElementsByTagName(`body`); // find body element
