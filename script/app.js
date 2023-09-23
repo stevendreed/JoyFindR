@@ -32,9 +32,9 @@ const concatQuerPar = function(arrayOfParams)
 // TESTING
 // comb document for element to append a button to, for testing
 
-const testBtnEl = document.getElementById(`testing-form`);
+const searchBtnEl = document.getElementById(`testing-form`);
 
-testBtnEl.addEventListener(`submit`, function(event)
+searchBtnEl.addEventListener(`submit`, function(event)
 {
     console.log(`submitted!`);
     event.preventDefault(); // stop page from automatically refreshing
@@ -48,7 +48,20 @@ testBtnEl.addEventListener(`submit`, function(event)
     // rawgFetch(concatQuerPar(inputData), RAWG_URL);
     console.log(getGameByName(inputData));
 } // end function
-); // end testBtnEl
+); // end searchBtnEl
+
+const scrShotBtnEl = document.getElementById(`ss-form`)
+
+scrShotBtnEl.addEventListener(`submit`, function(event)
+{
+    console.log(`looking for a screenshot`);
+    event.preventDefault();
+
+    let inputData = document.getElementById(`find-ss`).value;
+
+    console.log(getScrShotByName(inputData));
+}// end function
+); // end addEventListener
 
 // find body element
 const bodyEl = document.getElementsByTagName(`body`); // find body element

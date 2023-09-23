@@ -47,3 +47,8 @@ const getGameByName = function(gameToFind)
     let qp = `games?search=${gameToFind}`;
     return rawgFetch(qp, RAWG_URL, RAWG_KEY);
 } // end getGameByName
+
+const getScrShotByName = function(queryParam)
+{
+
+} // end getScrShotByName
