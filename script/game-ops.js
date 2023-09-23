@@ -50,5 +50,16 @@ const getGameByName = function(gameToFind)
 
 const getScrShotByName = function(queryParam)
 {
-
+    console.log(`getScrShotByName envoked!`);
+    rawgFetch(queryParam, RAWG_URL, RAWG_KEY)
+    .then(returnVal)
+    {
+        console.log(returnVal);
+        // img id="container-ss"
+        /*
+        // obtain container element
+        document.getElementById(`container-ss`)
+        .setAttribute(`src=`) // set src of img to val from fetch
+        */
+    } // end then
 } // end getScrShotByName
