@@ -28,7 +28,7 @@ const concatQuerPar = function(arrayOfParams)
 } // end concatQuerPar
 
 
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // TESTING
 // comb document for element to append a button to, for testing
 
@@ -62,4 +62,4 @@ const bodyEl = document.getElementsByTagName(`body`); // find body element
 // add an event listener to the button that will fetch when clicked
 
 // END TESTING
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
