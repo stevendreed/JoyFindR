@@ -19,7 +19,7 @@ const RAWG_URL = `https://rawg.io/api/`;
 /*
    rawgFetch function = fetch a json response based on search param
 */
-const rawgFetch = function(queryParam, url, key)
+const rawgFetch = async function(queryParam, url, key)
 {
     // log fetch for testing purposes
     console.log(url+queryParam+key);
@@ -50,14 +50,14 @@ const rawgFetch = function(queryParam, url, key)
    and unacceptable special characters (out of ASCII range, endl, tabs, etc)
    returns a JSON of the request from the RAWG server
 */
-const getGameByName = function(gameToFind)
+const getGameByName = async function(gameToFind)
 {
     // TESTING COMMENT
     console.log(`getByName envoked`);
     
     // create a query parameter based on input game
     let qp = `games?search=${gameToFind}`;
-    rawgFetch(qp, RAWG_URL, RAWG_KEY);
+    return rawgFetch(qp, RAWG_URL, RAWG_KEY);
     /* .then(response)
     {
         return response;
@@ -65,7 +65,7 @@ const getGameByName = function(gameToFind)
     
 } // end getGameByName
 
-const getScrShotByName = function(queryParam)
+const getScrShotByName = async function(queryParam)
 {
     // set index we are interested in displaying: 0 is first
     let index = 0;
@@ -74,7 +74,7 @@ const getScrShotByName = function(queryParam)
     console.log(`getScrShotByName envoked!`);
 
     // get a json of a game to find a screenshot for
-    const searObj = getGameByName(queryParam);
+    const searObj = await getGameByName(queryParam);
 
     // set a query parameter specially tailored to return screen shots
     let qp = `games?${searObj.slug}/screenshots`;
