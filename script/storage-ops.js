@@ -75,7 +75,17 @@ const displayLS = function(key = NAME_OF_LS_ARRAY)
     let max = locStorArray.length;
     for (let i = 0; i < max; i++)
     {
-        
+        let currObj = locStorArray[i];
+        let newLiEl = document.createElement(`li`);
+        let newImgEl = document.createElement(`img`);
+        newLiEl.setAttribute(`index`, i);
+        newLiEl.innerText(`Game Name: ${currObj.slug} | Metacritic: ${currObj.metacritic}`);
+
+        newImgEl.setAttribute(`src`, currObj.background_image);
+        newImgEl.setAttribute(`alt`, `An image from ${currObj.name}`);
+
+        listTarg.appendChild(newLiEl);
+        newLiEl.appendChild(newImgEl);
     } // end for
 } // end displayLS
 
