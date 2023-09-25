@@ -23,12 +23,24 @@ const rawgFetch = function(queryParam, url, key)
 {
     // log fetch for testing purposes
     console.log(url+queryParam+key);
-
     fetch(url+queryParam+key)
     .then(function(response)
     {
-        return response.json();
-    }); // end then
+        if (response.ok)
+        {
+            return response.json();
+        } // end if
+        else 
+        {
+            console.log(`Error: ` + response.statusText);
+        } // else
+    }// end function
+    ) // end then
+    .catch(function(errorOut)
+    {
+        console.log(`Unable to connect to ` + url)
+    } // end catch
+    ); // end then
 } // end rawgFetch
 
 /*
