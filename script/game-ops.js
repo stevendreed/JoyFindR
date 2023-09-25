@@ -57,26 +57,16 @@ const getGameByName = function(gameToFind)
     
     // create a query parameter based on input game
     let qp = `games?search=${gameToFind}`;
-    rawgFetch(qp, RAWG_URL, RAWG_KEY)
-    .then(response)
+    rawgFetch(qp, RAWG_URL, RAWG_KEY);
+    /* .then(response)
     {
         return response;
-    } // end then
+    } // end then */
     
 } // end getGameByName
 
 const getScrShotByName = function(queryParam)
 {
     console.log(`getScrShotByName envoked!`);
-    rawgFetch(queryParam, RAWG_URL, RAWG_KEY)
-    .then(returnVal)
-    {
-        console.log(returnVal);
-        // img id="container-ss"
-        /*
-        // obtain container element
-        document.getElementById(`container-ss`)
-        .setAttribute(`src=`) // set src of img to val from fetch
-        */
-    } // end then
+    rawgFetch(queryParam, RAWG_URL, RAWG_KEY);
 } // end getScrShotByName
