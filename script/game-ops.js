@@ -45,7 +45,11 @@ const getGameByName = function(gameToFind)
     
     // create a query parameter based on input game
     let qp = `games?search=${gameToFind}`;
-    new Promise(rawgFetch(qp, RAWG_URL, RAWG_KEY), reject)
+    rawgFetch(qp, RAWG_URL, RAWG_KEY)
+    .then(response)
+    {
+        return response;
+    } // end then
     
 } // end getGameByName
 
