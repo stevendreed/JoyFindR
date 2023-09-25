@@ -63,6 +63,22 @@ const addToLS = function(arrayKey, toEnqueue)
     overwriteLS(NAME_OF_LS_ARRAY, storArray);
 } // end addToLS
 
+/*
+   displayLS = a function that iterates through the stored objects in the local storage
+   array and dynamically builds a list of them
+*/
+const displayLS = function(key = NAME_OF_LS_ARRAY)
+{
+    const locStorArray = pullFromLS();
+    const listTarg = document.getElementById(`ls-target`);
+
+    let max = locStorArray.length;
+    for (let i = 0; i < max; i++)
+    {
+        
+    } // end for
+} // end displayLS
+
 // setCount = set the current number of stored games to value
 // stores the input under the count key 
 // const setCount = function(value)
