@@ -52,4 +52,3 @@ const getGameByName = function(gameToFind)
         return result;
     } // end then
 } // end getGameByName
-

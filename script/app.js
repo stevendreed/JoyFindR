@@ -2,7 +2,32 @@
 
 console.log(`Hello world!`);
 
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+/*
+   concatQuerPar function = concatenate a query parameter from a series of
+   search terms
+   function combines strings together into a way that is understandable by
+   a server API. Intended use is alongside a fetch function
+*/
+
+// ['game=fallout','tag=shooter']
+const concatQuerPar = function(arrayOfParams)
+{
+    let finalQuery = `?`;
+    // craft a query of concatenated query parameters
+    for (let i = 0; i < arrayOfParams.length; i++)
+    {
+        if (i > 0)
+        {
+            finalQuery += `&`; // add an ampersand if/f more items to loop
+                               // thru AND query isn't a singleton
+        } // end if
+        finalQuery += arrayOfParams[i]; // add the ith param to our query
+    } // end for
+    console.log(finalQuery); // test output for finalQuery
+} // end concatQuerPar
+
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // TESTING
 // comb document for element to append a button to, for testing
 
@@ -37,4 +62,4 @@ const bodyEl = document.getElementsByTagName(`body`); // find body element
 // add an event listener to the button that will fetch when clicked
 
 // END TESTING
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
