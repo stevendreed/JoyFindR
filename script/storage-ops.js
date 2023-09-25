@@ -39,9 +39,26 @@ const pullFromLS = function(key = `gameArray`)
 } // end pullFromLS
 
 /*
-   pushToLS = a function that accepts a JSON, updates the array of objects,
+   overwriteLS = a function that sets the key array to the value of newArray
+*/
+const overwriteLS = function(key = `gameArray`, newArray)
+{
+    let toStore = JSON.stringify(newArray);
+    localStorage.setItem(key, toStore);
+    return;
+} // end overwriteLS
+
+/*
+   addToLS = a function that accepts a JSON, updates the array of objects,
    then stores this stringified array in local storage
 */
+const addToLS = function(arrayKey, toEnqueue)
+{
+    // grab the entire array that holds all objects
+    const storArray = pullFromLS(arrayKey);
+    // append new object to the end of the array
+    storArray.append(toEnqueue);
+} // end addToLS
 
 // setCount = set the current number of stored games to value
 // stores the input under the count key 
