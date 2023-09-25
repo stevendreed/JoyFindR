@@ -6,20 +6,22 @@
 
 */
 
+const NAME_OF_LS_ARRAY = `gameArray`;
+
 /*
    initLS = a function that initializes a local storage array of objects,
    if the expected key is blank
 */
 
-const initLS = function(key = `gameArray`)
+const initLS = function(key = NAME_OF_LS_ARRAY)
 {
     let outcome = 0;
-    if (!Window.localStorage[`gameArray`])
+    if (!Window.localStorage[NAME_OF_LS_ARRAY])
     {
         let tempArOfObj = [
         ];
         tempArOfObj = JSON.stringify(tempArOfObj);
-        localStorage.setItem(`gameArray`, tempArOfObj);
+        localStorage.setItem(NAME_OF_LS_ARRAY, tempArOfObj);
         outcome = 1; // success: default initialized
     } // end if
     else
@@ -33,7 +35,7 @@ const initLS = function(key = `gameArray`)
    pullFromLS = a function that grabs stringified local storage array
    and returns it as an array of JSON objects
 */
-const pullFromLS = function(key = `gameArray`)
+const pullFromLS = function(key = NAME_OF_LS_ARRAY)
 {
     return localStorage.getItem(key).JSON;
 } // end pullFromLS
@@ -41,7 +43,7 @@ const pullFromLS = function(key = `gameArray`)
 /*
    overwriteLS = a function that sets the key array to the value of newArray
 */
-const overwriteLS = function(key = `gameArray`, newArray)
+const overwriteLS = function(key = NAME_OF_LS_ARRAY, newArray)
 {
     let toStore = JSON.stringify(newArray);
     localStorage.setItem(key, toStore);
@@ -58,6 +60,7 @@ const addToLS = function(arrayKey, toEnqueue)
     const storArray = pullFromLS(arrayKey);
     // append new object to the end of the array
     storArray.append(toEnqueue);
+    overwriteLS(NAME_OF_LS_ARRAY, storArray);
 } // end addToLS
 
 // setCount = set the current number of stored games to value
