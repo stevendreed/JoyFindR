@@ -67,6 +67,17 @@ const getGameByName = function(gameToFind)
 
 const getScrShotByName = function(queryParam)
 {
+    // set index we are interested in displaying: 0 is first
+    let index = 0;
+
+    // test console log
     console.log(`getScrShotByName envoked!`);
-    rawgFetch(queryParam, RAWG_URL, RAWG_KEY);
+
+    // get a json of a game to find a screenshot for
+    const searObj = getGameByName(queryParam);
+
+    // set a query parameter specially tailored to return screen shots
+    let qp = `games?${searObj.slug}/screenshots`;
+
+    return rawgFetch(qp, RAWG_URL, RAWG_KEY)[index].background_image;
 } // end getScrShotByName
