@@ -39,7 +39,7 @@ const rawgFetch = async function(queryParam, url, key)
     ) // end then
     .catch(function(errorOut)
     {
-        console.log(`Unable to connect to ` + url)
+        console.log(`Unable to connect to ` + url);
     } // end catch
     ); // end then
 } // end rawgFetch
@@ -72,12 +72,24 @@ const getScrShotByName = async function(queryParam)
 
     // test console log
     console.log(`getScrShotByName envoked!`);
-
+    let returnUrl = ``;
     // get a json of a game to find a screenshot for
-    const searObj = await getGameByName(queryParam);
-
-    // set a query parameter specially tailored to return screen shots
-    let qp = `games?${searObj.slug}/screenshots`;
-
-    return rawgFetch(qp, RAWG_URL, RAWG_KEY)[index].background_image;
+    const searObj = new Promise((myResolve, myReject) =>
+    {
+        const searObj = getGameByName(queryParam);
+        
+        if (typeof searObj === `object`)
+        {
+            myResolve(console.log(`found a screenshot!`));
+            let qp = `games?${searObj.slug}/screenshots`;
+            returnUrl = rawgFetch(qp, RAWG_URL, RAWG_KEY)[index].background_image;
+        } // end if
+        else
+        {
+            myReject(console.log(`we couldn't find a screenshot`));
+            // return generic penguin
+            returnUrl = `https://www.clipartmax.com/middle/m2i8H7i8b1K9H7m2_confused-penguin-by-hotketchup-linux/`
+        }
+    }) // end Promise
+    return returnUrl;
 } // end getScrShotByName
