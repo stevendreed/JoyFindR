@@ -35,7 +35,7 @@ const initLS = function(key = `gameArray`)
 */
 const pullFromLS = function(key = `gameArray`)
 {
-
+    return localStorage.getItem(key).JSON;
 } // end pullFromLS
 
 /*
