@@ -2,7 +2,6 @@
 
 console.log(`Hello world!`);
 
-
 /*
    concatQuerPar function = concatenate a query parameter from a series of
    search terms
@@ -46,6 +45,7 @@ testBtnEl.addEventListener(`submit`, function(event)
     // console.log(inputData);
     // pass data as fetch query
     // rawgFetch(concatQuerPar(inputData), RAWG_URL);
+    //console.log(rawgFetch(inputData, RAWG_URL, RAWG_KEY));
     console.log(getGameByName(inputData));
 } // end function
 ); // end testBtnEl

@@ -4,12 +4,11 @@
 
    this file contains fetch functions which call on the RAWG API
 
-   [+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]
+   [++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]
    link to the api:
    https://rawg.io/apidocs
-   [+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]
+   [++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]
    
-
 */
 
 // API CONSTANTS
@@ -18,6 +17,8 @@ const RAWG_URL = `https://rawg.io/api/`;
 
 /*
    rawgFetch function = fetch a json response based on search param
+   accepts a query parameter, the url to push the parameter to, and the key
+   returns the json response from the server
 */
 const rawgFetch = function(queryParam, url, key)
 {
@@ -42,8 +43,12 @@ const getGameByName = function(gameToFind)
 {
     // TESTING COMMENT
     console.log(`getByName envoked`);
-    
+
     // create a query parameter based on input game
     let qp = `games?search=${gameToFind}`;
-    return rawgFetch(qp, RAWG_URL, RAWG_KEY);
+    rawgFetch(qp, RAWG_URL, RAWG_KEY)
+    .then(result)
+    {
+        return result;
+    } // end then
 } // end getGameByName
