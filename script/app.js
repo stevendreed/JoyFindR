@@ -2,6 +2,9 @@
 
 console.log(`Hello world!`);
 
+// initialize array of objects
+initLS();
+
 /*
    concatQuerPar function = concatenate a query parameter from a series of
    search terms
