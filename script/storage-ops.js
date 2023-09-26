@@ -89,7 +89,18 @@ const displayLS = function(key = NAME_OF_LS_ARRAY)
         listTarg.appendChild(newLiEl);
         newLiEl.appendChild(newImgEl);
     } // end for
+    return;
 } // end displayLS
+
+/* clearDisplayedLs = a function that clears the appended children used to display bookmarked games
+*/
+const clearDisplayedLS = function()
+{
+    // get last child appended to ls-target
+
+    // iterate backward through ls-target children
+    // remove all children
+} // end clearDisplayedLS
 
 // setCount = set the current number of stored games to value
 // stores the input under the count key 
