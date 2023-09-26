@@ -1,27 +1,30 @@
 # JoyFindR
 
-## Description
+## Table of Contents
+1. [Description] (#description)
+2. [Installation] (#installation)
+3. [Usage] (#usage)
+4. [Support] (#support)
+5. [Credits] (#credits)
+6. [License] (#license)
 
-Website that takes in individual gaming memes from Giphy, and has them displayed on the page using APIs from https://rawg.io/apidocs and https://developers.giphy.com/.
+## Description <a name="description"></a>
 
-## Installation
+Is a webapp that acts as a game library storage, given that a user enters what games they want to save, while alongside it, will also return memes with the output of the game description. Using APIs from https://rawg.io/apidocs and https://developers.giphy.com/.
 
-Run 'git clone (repo link)' on Git Bash'
-CD into project directory
-Run project via code editor (e.g. Visual Studio Code)
-Navigate to index.html
-Right click on file, and click 'Open in Default Browser' to view project in browser
+## Installation <a name="installation"></a>
 
+No need for any installation! Just search for the webapp in your browser and you'll be right there!
 
-## Usage
+## Usage <a name="usage"></a>
 
-Usage will consist of searching for memes using an input field, where the results will gradually be displayed on screen as the user hits submit. Upon clicking submit, the request will be sent to the API, where it will send back a response to the client in HTML form.
+Usage will consist of searching for game titles using an input field, where the results will gradually be displayed on screen as the user hits submit. Upon clicking submit, the request will be sent to the API, where it will send back a response to the client in HTML form. That shows the game that was entered and all its information, with a . From there, the user can choose to whether save it to their library/wishlist for later, or learn more information on that game and/or search for a new title to learn about!
 
-# Support
+## Support <a name="support"></a>
 
 The application utilizes third-party software from websites, such as Rawg.io or Giphy.com. Using HTML, CSS, and JavaScript, the application will emphasize code logic to successfully adhere to the user’s interactions and to be visually appealing
 
-## Credits
+## Credits <a name="credits"></a>
 
 The application was done by the following contributors:
 
@@ -29,9 +32,10 @@ Danny Collan
 Steven Reed
 Zachary Gutierrez
 Darrel Saephan
+Franklin Membreno
 
 If you would like to contribute to the development of the project, please do not hesitate to reach out to any team member for a request. Thank you!
 
-## License
+## License <a name="license"></a>
 
 Please refer to the LICENSE in the repo.
