@@ -16,6 +16,7 @@ const NAME_OF_LS_ARRAY = `gameArray`;
 const initLS = function(key = NAME_OF_LS_ARRAY)
 {
     let outcome = 0;
+    // check to see if localstorage for default val already exists
     if (!Window.localStorage[NAME_OF_LS_ARRAY])
     {
         let tempArOfObj = [
@@ -26,7 +27,8 @@ const initLS = function(key = NAME_OF_LS_ARRAY)
     } // end if
     else
     {
-        console.log(`an error has occurred with local storage`);
+        console.log(`welcome back!`); // if local storage already exists
+                                      // this is a return user!
     } // end else
     return outcome;
 } // end initLS
