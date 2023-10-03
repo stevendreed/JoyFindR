@@ -3,10 +3,11 @@
 ## Table of Contents
 1. [Description] (#description)
 2. [Installation] (#installation)
-3. [Usage] (#usage)
-4. [Support] (#support)
-5. [Credits] (#credits)
-6. [License] (#license)
+3. [Screenshot] (#screenshot)
+4. [Usage] (#usage)
+5. [Support] (#support)
+6. [Credits] (#credits)
+7. [License] (#license)
 
 ## Description <a name="description"></a>
 
@@ -14,7 +15,11 @@ Is a webapp that acts as a game library storage, given that a user enters what g
 
 ## Installation <a name="installation"></a>
 
-No need for any installation! Just search for the webapp in your browser and you'll be right there!
+No need for any installation! Just search for https://stevendreed.github.io/JoyFindR/ on your browsers!
+
+## Screenshot <a name="screenshot"></a>
+
+![ss-joyfindr-9-25](https://github.com/stevendreed/JoyFindR/assets/138957749/409b6deb-a77f-41f6-905c-fe881eb1cbf4)
 
 ## Usage <a name="usage"></a>
 
