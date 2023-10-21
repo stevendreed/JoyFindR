@@ -65,6 +65,7 @@ const displayResults = function (results) {
     resultsContainer.appendChild(resultList);
     }
 
+
 const getGameByName = function(gameToFind)
 {
     // TESTING COMMENT
@@ -79,3 +80,30 @@ const getGameByName = function(gameToFind)
     });
 
 } // end getGameByName
+
+
+// Function to fetch game details
+const getGameDetails = function(gameName) {
+    // Make a fetch request to get detailed game information from RAWG.io
+    const qp = `games?search=${gameName}`;
+    rawgFetch(qp, RAWG_URL, RAWG_KEY)
+      .then(function(result) {
+        // Display game details on the game details page
+        displayGameDetails(result);
+      });
+  };
+  
+  // Function to display game details on the game details page
+  const displayGameDetails = function(gameData) {
+    // Extract and display game details (e.g., name, release date, description) on the game details page
+  };
+  
+  // When the game details page loads, extract the selected game from the URL and fetch its details
+  window.onload = function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const selectedGame = urlParams.get("game");
+  
+    if (selectedGame) {
+      getGameDetails(selectedGame);
+    }
+  };
