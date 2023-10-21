@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JoyFindR</title>
-<link rel="stylesheet" href="../assets/css/reset.css"/>
-<link rel="stylesheet" href="../assets/css/sitewide.css"/>
+<link rel="stylesheet" href="./assets/css/reset.css"/>
+<link rel="stylesheet" href="./assets/css/sitewide.css"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -54,6 +54,7 @@
 
         <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start text-white">
             <input
+              id="data"
               type="search"
               class="md:focus:text-white relative m-0 -mr-0.5 block w-[1px] min-w-0 flex-auto rounded-l border border-solid border-neutral-300 bg-transparent bg-clip-padding px-1 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary"
               placeholder="Search"
@@ -63,7 +64,7 @@
             <button
               class="relative z-[2] rounded-r border-2 border-primary px-6 py-2 text-xs font-medium uppercase text-primary transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
               type="button"
-              id="button-addon3"
+              id="testing-form"
               data-te-ripple-init>
               Search
             </button>
@@ -115,10 +116,11 @@
       </div>
     </div>
   </nav>
-
+  <div id="results" class="results-container">
+    <!-- Results will be displayed here -->
+</div>
 
 </body>
-<script src="./script/storage-ops"></script>
-<script src="./script/game-ops.js"></script>
 <script src="./script/app.js"></script>
+<script src="./script/game-ops.js"></script>
 </html>
