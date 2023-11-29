@@ -52,10 +52,16 @@ const displayResults = function (results) {
     
      // Create a text element for the game name
     const textElement = document.createTextNode(result.name);
+    const saveButton = document.createElement('button');
+    saveButton.textContent = 'Save';
+    saveButton.addEventListener('click', function() {
+      saveResult(result);
+    });
     
     // Append the image and text elements to the list item
      listItem.appendChild(imageElement);
      listItem.appendChild(textElement);
+     listItem.appendChild(saveButton);
     
     // Append the list item to the result list
     resultList.appendChild(listItem);
@@ -64,6 +70,104 @@ const displayResults = function (results) {
     // Append the result list to the results container
     resultsContainer.appendChild(resultList);
     }
+
+    function saveResult(result) {
+      // Get existing bookmarks from local storage or initialize an empty array
+      let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
+  
+      // Check if the result is already in bookmarks
+      const isAlreadySaved = bookmarks.some(bookmark => bookmark.name === result.name);
+
+      const modal = document.getElementById('myModal');
+      const modalText = document.getElementById('modalText');
+
+      if (!isAlreadySaved) {
+        // Add the new result to bookmarks
+        bookmarks.push(result);
+
+        // Save the updated bookmarks back to local storage
+        localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+
+        // Update the displayed bookmarks
+        displayBookmarks();
+
+        // Set modal text and display the modal
+        modalText.textContent = 'Saved into wishlist!';
+        modal.style.display = 'block';
+    } else {
+        // Set modal text and display the modal
+        modalText.textContent = 'This game is already in your wishlist.';
+        modal.style.display = 'block';
+    }
+  }
+
+  // Close the modal when the user clicks the close button
+const closeModal = document.querySelector('.close');
+if (closeModal) {
+    closeModal.addEventListener('click', function () {
+        const modal = document.getElementById('myModal');
+        modal.style.display = 'none';
+    });
+}
+
+// Close the modal when the user clicks anywhere outside of it
+window.addEventListener('click', function (event) {
+  const modal = document.getElementById('myModal');
+  if (event.target === modal) {
+      modal.style.display = 'none';
+  }
+});
+
+  function displayBookmarks() {
+    let bookmarksContainer = document.getElementById("bookmarkResults");
+   
+     // Check if bookmarksContainer is null
+     if (!bookmarksContainer) {
+      console.error("Bookmarks container not found");
+      return;
+  }
+  bookmarksContainer.innerHTML = '';
+
+    // Get bookmarks from local storage
+    let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
+    let bookmarkList = document.createElement('ul');
+
+    bookmarks.forEach(bookmark => {
+        const bookmarkItem = document.createElement("li");
+        const bookmarkText = document.createTextNode(bookmark.name);
+        const imageElement = document.createElement("img");
+        imageElement.src = bookmark.background_image; // Use the API-provided image URL
+        imageElement.alt = bookmark.name; // Set alt text for accessibility
+        imageElement.style.maxWidth = "100px"; // Set a maximum width for the image (adjust as needed)
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.addEventListener('click', function() {
+        // Find the index of the bookmark to be deleted
+        const indexToDelete = bookmarks.findIndex(item => item.name === bookmark.name);
+        // Remove the specified bookmark from the array
+        bookmarks.splice(indexToDelete, 1);  
+        
+        // Save the updated bookmarks back to local storage
+        localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+
+        // Update the displayed bookmarks
+        displayBookmarks();
+        });
+
+        bookmarkItem.appendChild(imageElement);
+        bookmarkItem.appendChild(bookmarkText);
+        bookmarkItem.appendChild(deleteButton);
+
+        bookmarkList.appendChild(bookmarkItem);
+        bookmarksContainer.appendChild(bookmarkList);
+    });
+}
+
+// Check if the current page is bookmarks.html, then display bookmarks
+if (window.location.pathname.includes('bookmark.html')) {
+  displayBookmarks();
+}
 
 
 const getGameByName = function(gameToFind)
@@ -90,6 +194,8 @@ const getGameDetails = function(gameName) {
       .then(function(result) {
         // Display game details on the game details page
         displayGameDetails(result);
+
+        
       });
   };
   

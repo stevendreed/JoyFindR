@@ -26,9 +26,19 @@ function getURLParameter(name) {
         const gameDetails = result.results[0];
         if (gameDetails) {
           // Update the game details in the HTML
-          document.getElementById("game-name").textContent = gameDetails.name;
+          document.getElementById("game-name").textContent = `Game Name: ${gameDetails.name}`;
           document.getElementById("game-release-date").textContent = `Release Date: ${gameDetails.released}`;
-          document.getElementById("game-description").textContent = gameDetails.description;
+          document.getElementById("game-ratings").textContent = `Ratings: ${gameDetails.rating}`;
+          
+          // Find the "game-genres" element
+          const gameGenresElement = document.getElementById("game-genres");
+
+          // Create an array to store platform names
+          const genreNames = gameDetails.genres.map((genre) => genre.name);
+
+          // Set the content of the "game-platforms" element
+          gameGenresElement.textContent = `Genres: ${genreNames.join(', ')}`;
+          
           // Add logic to display the Giphy meme if needed
         } else {
           // Handle the case where the game is not found
@@ -37,26 +47,29 @@ function getURLParameter(name) {
       });
 
     fetch(giphyURL + giphyAPIKey + giphyQueryParam)
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(result) {
-        if (result.data) {
-          return result.data.image_url;
-        } else {
-          return null; // No Giphy meme found for this game name
-        }
-      })
-      .then((memeUrl) => {
-        if (memeUrl) {
-          const memeImage = document.getElementById('meme-image');
-          memeImage.src = memeUrl;
-          memeImage.alt = 'Giphy Meme';
-        } else {
-          // Handle case where no meme is found
-          console.log('No Giphy meme found for this game.');
-        }
-      });
+    .then((response) => response.json())
+    .then((result) => {
+      if (result.data && result.data.length > 0) {
+        const randomIndex = Math.floor(Math.random() * result.data.length);
+        const randomGifUrl = result.data[randomIndex].images.original.url;
+        return randomGifUrl;
+      } else {
+        return null; // Handle the case where no GIFs are found for the search term
+      }
+    })
+    .then((memeUrl) => {
+      if (memeUrl) {
+        const memeImage = document.getElementById('meme-image');
+        memeImage.src = memeUrl;
+        memeImage.alt = 'Giphy Meme';
+      } else {
+        // Handle case where no meme is found
+        console.log('No Giphy meme found for this game.');
+      }
+    })
+    .catch((error) => {
+      console.error('Error fetching Giphy meme:', error);
+    });
     
       // Add an event listener to the search button
       const searchButton = document.getElementById(`testing-form`);

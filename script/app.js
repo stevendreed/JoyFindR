@@ -21,7 +21,7 @@ testBtnEl.addEventListener("click", function(event)
     // pass data as fetch query
     // rawgFetch(concatQuerPar(inputData), RAWG_URL);
     //console.log(rawgFetch(inputData, RAWG_URL, RAWG_KEY));
-    console.log(getGameByName(inputData));
+    getGameByName(inputData);
 } // end function
 ); // end testBtnEl
 
@@ -37,6 +37,7 @@ resultList.addEventListener("click", function(event) {
     window.location.href = `pages/game_details.html?game=${selectedGame}`;
   }
 });
+
 
 // append a child button to the last child of body
 

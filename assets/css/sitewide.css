@@ -31,3 +31,16 @@ nav {
     display: flex;
     flex-direction: column; /* Display items as columns within each grid cell */
 }
+
+.bookmarks-holder ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust the column width as needed */
+    gap: 20px; /* Adjust the gap between items */
+    list-style: none; /* Remove the default list styling */
+    padding: 20px; /* Remove default padding */
+}
+
+.bookmarks-holder li {
+    display: flex;
+    flex-direction: column; /* Display items as columns within each grid cell */
+}
