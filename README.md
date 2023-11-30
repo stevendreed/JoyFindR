@@ -19,11 +19,16 @@ No need for any installation! Just search for https://stevendreed.github.io/JoyF
 
 ## Screenshot 
 
-![ss-joyfindr-9-25](https://github.com/stevendreed/JoyFindR/assets/138957749/409b6deb-a77f-41f6-905c-fe881eb1cbf4)
+![img](./assets/images/JoyFindR-1.png)
+![img](./assets/images/JoyFindR-2.png)
+![img](./assets/images/JoyFindR-3.png)
+![img](./assets/images/JoyFindR-4.png)
+![img](./assets/images/JoyFindR-5.png)
+![img](./assets/images/JoyFindR-6.png)
 
 ## Usage 
 
-Usage will consist of searching for game titles using an input field, where the results will gradually be displayed on screen as the user hits submit. Upon clicking submit, the request will be sent to the API, where it will send back a response to the client in HTML form. That shows the game that was entered and all its information, with a . From there, the user can choose to whether save it to their library/wishlist for later, or learn more information on that game and/or search for a new title to learn about!
+Usage will consist of searching for game titles using an input field, where the results will gradually be displayed on screen as the user hits submit. Upon clicking 'Search', the request will be sent to the API, where it will send back a response to the client in HTML form. The indicated game that was entered will eventually be returned in several results with a 'Save' button below each result to indicate whether the user wishes to have them saved to their Wishlist for a future reference. As the user clicks on a game, the person will then be taken to a game info page, where the indicated game's release date, ratings, and genres will be returned, with a corresponding meme gif that will also be displayed to add some humor.
 
 ## Support 
 
