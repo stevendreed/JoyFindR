@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JoyFindR</title>
-<link rel="stylesheet" href="./assets/css/reset.css"/>
-<link rel="stylesheet" href="./assets/css/main.css"/>
+<link rel="stylesheet" href="../assets/css/reset.css"/>
+<link rel="stylesheet" href="../assets/css/main.css"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -39,12 +39,12 @@
         </div>
         <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
           <div class="flex flex-shrink-0 items-center">
-            <a href="./index.html" class="logo-img"><img class="h-8 w-auto" src="./assets/images/logo.svg" alt="Your Company"></a>
+            <a href="../index.html" class="logo-img"><img class="h-8 w-auto" src="../assets/images/logo.svg" alt="Your Company"></a>
           </div>
           <div class="hidden sm:ml-6 sm:block">
             <div class="flex space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <a href="./bookmark.html" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Wishlist</a>
+              <a href="../bookmark.html" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Wishlist</a>
             </div>
           </div>
         </div>
@@ -82,27 +82,40 @@
       </div>
     </div>
   </nav>
-  <div id="results" class="results-container">
+<main id="information">
+    <header>
+        <h1>Game Details</h1>
+    </header>
+    <br>
+    <section id="game-details">
+        <div id="game-name">
+            <h3>Name:</h3>
+            <!-- Display the game name here -->
+        </div>
+        <div id="game-ratings">
+          <h3>Ratings:</h3>
+          <!-- Display the game ratings here -->
+          </div>
+        <div id="game-release-date">
+            <h3>Release Date:</h3>
+            <!-- Display the release date here -->
+        </div>
+        <div id="game-genres">
+            <h3>Genre:</h3>
+            <!-- Display the game genre here -->
+        </div>
+        <!-- You can add more fields for additional game details -->
+    </section>
+    <section id="giphy-meme">
+        <img id="meme-image"/>
+            <!-- Display the Giphy meme image here -->
+    </section>
+    <a href="../index.html">Back to Search Results</a>
+</main>
+<div id="results" class="results-container">
     <!-- Results will be displayed here -->
 </div>
-  <!-- Featured Post -->
-      <header class="major">
-        <span class="date">Now Introducing...</span>
-        <h1 class="main-title">JoyFindR<br /></h1>
-        <h3>The Top Gaming-Memerific Your-Go-To Site!</h3>
-        <br />
-        <p class="main-text">Browse! Laugh! Spill Your Soda!</p>
-      </header>
-      <a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
-
-      <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p id="modalText"></p>
-        </div>
-    </div>
-
 </body>
-<script src="./script/game-ops.js"></script>
-<script src="./script/app.js"></script>
+<script src="../script/game-ops.js"></script>
+<script src="../script/game_details.js"></script>
 </html>
